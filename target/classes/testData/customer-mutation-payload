@@ -1,0 +1,9 @@
+mutation ($customerInput: CustomerInput) {
+  createCustomer(customerData: $customerInput) {
+    customerId
+    firstName
+    lastName
+    email
+    phoneNumber
+  }
+}

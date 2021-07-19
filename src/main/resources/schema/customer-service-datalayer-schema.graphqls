@@ -1,0 +1,55 @@
+type Query {
+    allCustomers: [CustomerDTO]
+    customersById(customerId: String): Customer
+    allAddresses: [Address]
+    addressesByCustomerId(customerId: String): [Address]
+    addressesByAddressId(addressId: String): Address
+}
+
+type Mutation {
+    createCustomer(customerData: CustomerInput): Customer
+    createAddress(addressData: AddressInput): Address
+}
+
+input AddressInput {
+    address1: String
+    address2: String
+    city: String
+    state: String
+    postalCode: String
+    customerId: String
+}
+
+input CustomerInput{
+    firstName: String
+    lastName: String
+    email: String
+    phoneNumber: String
+}
+
+type Customer {
+    customerId: ID!
+    firstName: String
+    lastName: String
+    email: String
+    phoneNumber: String
+}
+
+type CustomerDTO {
+    customerId: ID!
+    firstName: String
+    lastName: String
+    email: String
+    phoneNumber: String
+    addresses:[Address]
+}
+
+type Address {
+    addressId: ID!
+    address1: String
+    address2: String
+    city: String
+    state: String
+    postalCode: String
+    customerId: String
+}

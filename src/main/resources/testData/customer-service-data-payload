@@ -1,0 +1,51 @@
+{
+  allCustomers {
+    customerId
+    firstName
+    lastName
+    email
+    phoneNumber
+    addresses {
+      addressId
+      address1
+      address2
+      city
+      state
+      postalCode
+    }
+  }
+  customersById(customerId: "a0ec2a02-af74-4da1-a44b-d65b70a7bb82") {
+    customerId
+    firstName
+    lastName
+    email
+    phoneNumber
+  }
+  addressesByCustomerId(customerId: "a0ec2a02-af74-4da1-a44b-d65b70a7bb82") {
+    addressId
+    address1
+    address2
+    city
+    state
+    postalCode
+    customerId
+  }
+  addressesByAddressId(addressId: "c930ef78-e714-11eb-ba80-0242ac130004") {
+    addressId
+    address1
+    address2
+    city
+    state
+    postalCode
+    customerId
+  }
+  allAddresses {
+    addressId
+    address1
+    address2
+    city
+    state
+    postalCode
+    customerId
+  }
+}
